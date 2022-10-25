@@ -1,12 +1,12 @@
 <?php
 
-class ControladorProveedores{
+class ControladorProdprovs{
 
 	/*=============================================
-	CREAR Proveedores
+	CREAR Proveedores 
 	=============================================*/
 
-	static public function ctrCrearProveedor(){
+	static public function ctrCrearProdprovs(){
 
 		if(isset($_POST["nuevoProveedor"])){
 
@@ -75,33 +75,16 @@ class ControladorProveedores{
 	MOSTRAR PROVEEDORES
 	=============================================*/
 
-	static public function ctrMostrarProveedores($item, $valor){
+	static public function ctrMostrarProdprovs($item, $valor){
 
-		$tabla = "proveedores";
+		$tabla = "prodprovs";
 
-		$respuesta = ModeloProveedores::mdlMostrarProveedores($tabla, $item, $valor);
-
-		return $respuesta;
-
-	}
-
-/*=============================================
-	MOSTRAR producto
-	=============================================*/
-
-	static public function ctrMostrarProducto($item, $valor){
-		
-
-			$tabla ="prodprovs";
-	
-		$respuesta = ModeloProveedores::mdlMostrarProducto($tabla, $item, $valor);
+		$respuesta = ModeloProdprovs::mdlMostrarProdprovs($tabla, $item, $valor);
 
 		return $respuesta;
 
 	}
 
-	
-	
 	/*=============================================
 	EDITAR PROVEEDOR
 	=============================================*/

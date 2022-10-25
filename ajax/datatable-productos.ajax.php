@@ -37,7 +37,7 @@ class TablaProductos{
  	 		TRAEMOS LA IMAGEN
   			=============================================*/ 
 
-		  	$imagen = "<img src='".$productos[$i]["imagen"]."' width='40px'>";
+		  	$imagen = "<img src='".$productos[$i]["imagen"]."' width='60px'>";
 
 		  	/*=============================================
  	 		TRAEMOS LA CATEGORÍA

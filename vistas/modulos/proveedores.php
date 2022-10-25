@@ -78,10 +78,11 @@
 
           
               <div class="btn-group">
-                  
-                <button class="btn btn-warning btnEditarProveedor"  data-toggle="modal" data-target="#modalEditarProveedor"  idProveedor="'.$value["id"].'" ><i class="fa fa-pencil"></i></button>
 
-                <button class="btn btn-danger btnEliminarProveedor" idProveedor="'.$value["id"].'"><i class="fa fa-times"></i></button>
+                <button class="btn btn-warning btnEditarProveedor"  data-toggle="modal" data-target="#modalEditarProveedor" title="editar"  idProveedor="'.$value["id"].'" ><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-primary btnMostrarProducto"  data-toggle="modal" data-target="#modalMostrarProveedor" title="ver"  idProveedor="'.$value["id"].'" ><i class="fa fa-list"></i></button>
+
+                <button class="btn btn-danger btnEliminarProveedor" title="eliminar" idProveedor="'.$value["id"].' "><i class="fa fa-times"></i></button>
 
               </div>  
 
@@ -205,6 +206,128 @@ MODAL AGREGAR PROVEEDOR
 </div>
 
 
+<!--=====================================
+MODAL MOSTRAR PRODUCTOS 
+======================================-->
+
+<div id="modalMostrarProveedor" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#3c8dbc; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Productos del proveedor </h4>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+  <h1>Productos que vende el proveedor</h1>
+  <table class="table table-bordered table-striped dt-responsive tablas">
+         
+         <thead>
+          
+          <tr>
+            
+            <th style="width:10px">#</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+ 
+          </tr> 
+ 
+         </thead>
+ 
+         <tbody>
+            
+         
+         <?php
+ 
+         $item = null;
+         $valor = null;
+ 
+         $prodprovs = ControladorProveedores::ctrMostrarProducto($item, $valor);
+ 
+        foreach ($prodprovs as $key => $value){
+          
+           echo '
+           <tr>
+           <td>'.($key+1).'</td>
+ 
+           <td>'.$value["nombre"].'</td>
+ 
+           <td>'.$value["tipo"].'</td>
+ 
+           <td>'.$value["cantidad"].'</td>
+           
+           <td>'.$value["precio"].'</td>
+ 
+       
+ 
+             <td>
+ 
+           
+               <div class="btn-group">
+ 
+                 <button class="btn btn-warning btnEditarProveedor"  data-toggle="modal" data-target="#modalEditarProdprov" title="editar"  idProdprov="'.$value["id"].'" ><i class="fa fa-pencil"></i></button>
+                 <button class="btn btn-danger modalEliminarProdprov" title="eliminar" idProdprov="'.$value["id"].' "><i class="fa fa-times"></i></button>
+ 
+               </div>  
+ 
+             </td>
+ 
+           </tr>
+ 
+           
+         </tbody>
+         
+        ' ; }?> 
+         
+        </table>
+ 
+            </div>
+
+            </div>
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Guardar provprod</button>
+
+        </div>
+
+      </form>
+    
+   
+    </div>
+
+  </div>
+
+</div>
+
+
+
 
 <!--=====================================
 MODAL EDITAR PROVEEDOR
@@ -282,7 +405,7 @@ MODAL EDITAR PROVEEDOR
 
             </div>
             </div>
-
+ 
           </div>
         <!--=====================================
         PIE DEL MODAL

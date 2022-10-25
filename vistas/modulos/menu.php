@@ -35,7 +35,7 @@
 
 				<a href="proveedores">
 
-					<i class="fa fa-user"></i>
+					<i class="fa fa-truck"></i>
 					<span>Proveedores</span>
 
 				</a>

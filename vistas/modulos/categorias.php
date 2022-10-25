@@ -8,7 +8,7 @@ if($_SESSION["perfil"] == "Vendedor"){
 
   </script>';
 
-  return; 
+  return;
 
 }
 
@@ -58,8 +58,6 @@ if($_SESSION["perfil"] == "Vendedor"){
            
            <th style="width:10px">#</th>
            <th>Categoria</th>
-           <th>telefono</th>
-           <th>correo electronico</th>
            <th>Acciones</th>
 
          </tr> 
@@ -82,9 +80,7 @@ if($_SESSION["perfil"] == "Vendedor"){
                     <td>'.($key+1).'</td>
 
                     <td class="text-uppercase">'.$value["categoria"].'</td>
-                    <td class="text-uppercase">'.$value["telefono"].'</td>
-                    <td class="text-uppercase">'.$value["email"].'</td>
-                    
+
                     <td>
 
                       <div class="btn-group">
@@ -159,31 +155,8 @@ MODAL AGREGAR CATEGORÍA
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar categoría" required>
-                             
-
 
               </div>
-              <div class="input-group">
-              
-              <span class="input-group-addon"><i class="fa fa-th"></i></span> 
-
-              <input type="text" class="form-control input-lg" name="telefono" placeholder="Ingresar telefono" required>
-                            
-
-
-            </div>
-            <div class="input-group">
-              
-              <span class="input-group-addon"><i class="fa fa-th"></i></span> 
-
-              <input type="text" class="form-control input-lg" name="email" placeholder="Ingresar correo electronico" required>
-                            
-
-
-            </div>
-
-       
-
 
             </div>
   
@@ -258,28 +231,11 @@ MODAL EDITAR CATEGORÍA
               
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="categoria" id="editarCategoria" required>
+                <input type="text" class="form-control input-lg" name="editarCategoria" id="editarCategoria" required>
 
                  <input type="hidden"  name="idCategoria" id="idCategoria" required>
 
               </div>
-
-
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="editarTelefono" id="editarTelefono" required>
-
-              </div>
-
-              <div class="input-group">
-              
-              <span class="input-group-addon"><i class="fa fa-th"></i></span> 
-
-              <input type="text" class="form-control input-lg" name="editarEmail" id="editarEmail" required>
-        
-            </div>
 
             </div>
   

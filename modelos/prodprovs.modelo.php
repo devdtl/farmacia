@@ -2,13 +2,13 @@
 
 require_once "conexion.php";
 
-class ModeloProveedores{
+class ModeloProdprovs{
 
 	/*=============================================
 	CREAR CLIENTE
 	=============================================*/
 
-	static public function mdlAgregarProveedor($tabla, $datos){
+	static public function mdlAgregarProdprovs($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, email, telefono) VALUES (:nombre, :email, :telefono)");
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
@@ -35,7 +35,7 @@ class ModeloProveedores{
 	MOSTRAR PROVEEDORES
 	=============================================*/
 
-	static public function mdlMostrarProveedores($tabla, $item, $valor){
+	static public function mdlMostrarProdprovs($tabla, $item, $valor){
 
 		if($item != null){
 
@@ -62,38 +62,7 @@ class ModeloProveedores{
 		$stmt = null;
 
 	}
-	/*=============================================
-	MOSTRAR producto
-	=============================================*/
 
-	static public function mdlMostrarProducto($tabla, $item, $valor){
-
-		if($item != null){
-
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ");
-
-			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-
-			$stmt -> execute();
-
-			return $stmt -> fetch();
-
-		}else{
-
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla where id_proveedor = 1");
-
-			$stmt -> execute();
-
-			return $stmt -> fetchAll();
-
-		}
-
-		$stmt -> close();
-
-		$stmt = null;
-
-	}
-	
 	/*=============================================
 	EDITAR PROVEEDORES
 	=============================================*/
