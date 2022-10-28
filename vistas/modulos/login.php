@@ -1,14 +1,14 @@
 <div id="back"></div>
 
-<div class="login-box">
+<div class="login-box" >
   
   <div class="login-logo">
 
-    <img src="vistas/img/plantilla/logo-blanco-bloque.png" class="img-responsive" style="padding:30px 100px 0px 100px">
+    <img src="vistas/img/plantilla/logologin.png" class="img-responsive" style="padding:30px 100px 0px 100px">
 
   </div>
 
-  <div class="login-box-body">
+  <div class="login-box-body" style=" opacity:0.9; background-color:#f1f2f6">
 
     <p class="login-box-msg">Ingresar al sistema</p>
 

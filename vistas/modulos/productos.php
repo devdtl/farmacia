@@ -502,6 +502,73 @@ MODAL EDITAR PRODUCTO
 
 </div>
 
+
+<!--=====================================
+MODAL EDITAR PRODUCTO
+======================================-->
+
+<div id="modalEditarProductos" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog modal-dialog-centered modal-m ">
+
+    <div class="modal-content">
+
+      <form role="form" method="post" enctype="multipart/form-data">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+  
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body" style="background-color:whitesmoke;">
+
+          <div class="box-body">
+
+          <img src="vistas/img/productos/default/anonymous.png" style="border-radius: 79px;     padding: 31px;" class="img-thumbnail previsualizar" width="auto">
+
+        <input type="hidden" name="imagenActual" id="imagenActual">
+
+           
+
+                </div>
+
+            </div>
+
+  
+          
+            
+             
+
+            
+            
+
+        
+
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+      </form>
+
+        <?php
+
+          $editarProducto = new ControladorProductos();
+          $editarProducto -> ctrEditarProducto();
+
+        ?>      
+
+    </div>
+
+  </div>
+
+</div>
+
 <?php
 
   $eliminarProducto = new ControladorProductos();

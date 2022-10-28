@@ -159,7 +159,7 @@ class ControladorProductos{
 	static public function ctrEditarProducto(){
 
 		if(isset($_POST["editarDescripcion"])){
-
+ 
 			if(
 			   preg_match('/^[0-9]+$/', $_POST["editarStock"]) &&	
 			   preg_match('/^[0-9.]+$/', $_POST["editarPrecioCompra"]) &&

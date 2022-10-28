@@ -60,20 +60,20 @@ $pdf->AddPage();
 $bloque1 = <<<EOF
 
 	<table>
-		
+		 
 		<tr>
 			
-			<td style="width:150px"><img src="images/logo-negro-bloque.png"></td>
+			<td style="width:150px"></td>
 
 			<td style="background-color:white; width:140px">
 				
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					
 					<br>
-					NIT: 71.759.963-9
+		
 
 					<br>
-					Dirección: Calle 44B 92-11
+				
 
 				</div>
 
@@ -84,11 +84,9 @@ $bloque1 = <<<EOF
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					
 					<br>
-					Teléfono: 300 786 52 49
+			
 					
 					<br>
-					ventas@inventorysystem.com
-
 				</div>
 				
 			</td>
