@@ -74,7 +74,7 @@ if($_SESSION["perfil"] == "Especial"){
            <th>Cliente</th>
            <th>Vendedor</th>
            <th>Forma de pago</th>
-           <th>Neto</th>
+
            <th>Total</th> 
            <th>Fecha</th>
            <th>Acciones</th>
@@ -125,8 +125,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                   <td>'.$value["metodo_pago"].'</td>
 
-                  <td>$ '.number_format($value["neto"],2).'</td>
-
+            
                   <td>$ '.number_format($value["total"],2).'</td>
 
                   <td>'.$value["fecha"].'</td>

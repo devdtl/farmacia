@@ -13,11 +13,15 @@ CARGAR LA TABLA DINÁMICA DE VENTAS
 
 // })// 
 
+
 $('.tablaVentas').DataTable( {
+
+	"order": [0, 'asc'],
     "ajax": "ajax/datatable-ventas.ajax.php",
     "deferRender": true,
 	"retrieve": true,
 	"processing": true,
+	
 	 "language": {
 
 			"sProcessing":     "Procesando...",
@@ -38,6 +42,7 @@ $('.tablaVentas').DataTable( {
 			"sNext":     "Siguiente",
 			"sPrevious": "Anterior"
 			},
+		
 			"oAria": {
 				"sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
 				"sSortDescending": ": Activar para ordenar la columna de manera descendente"
@@ -145,6 +150,11 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	        agregarImpuesto()
 
+			// AGREGAR Descuento
+
+			agregarDescuento()
+
+			
 	        // AGRUPAR PRODUCTOS EN FORMATO JSON
 
 	        listarProductos()
@@ -228,7 +238,7 @@ $(".formularioVenta").on("click", "button.quitarProducto", function(){
 		$("#nuevoTotalVenta").val(0);
 		$("#totalVenta").val(0);
 		$("#nuevoTotalVenta").attr("total",0);
-
+		$("#nuevoDescuentoVenta").val(0);
 	}else{
 
 		// SUMAR TOTAL DE PRECIOS
@@ -238,6 +248,10 @@ $(".formularioVenta").on("click", "button.quitarProducto", function(){
     	// AGREGAR IMPUESTO
 	        
         agregarImpuesto()
+		
+		// AGREGAR DESCUENTO
+	        
+		agregarDescuento()
 
         // AGRUPAR PRODUCTOS EN FORMATO JSON
 
@@ -346,6 +360,10 @@ $(".btnAgregarProducto").click(function(){
 	        
 	        agregarImpuesto()
 
+			// AGREGAR IMPUESTO
+	        
+			agregarDescuento()
+
 	        // PONER FORMATO AL PRECIO DE LOS PRODUCTOS
 
 	        $(".nuevoPrecioProducto").number(true, 2);
@@ -452,6 +470,10 @@ $(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
 	        
     agregarImpuesto()
 
+	// AGREGAR DESCUENTO
+	        
+	agregarDescuento()
+
     // AGRUPAR PRODUCTOS EN FORMATO JSON
 
     listarProductos()
@@ -487,6 +509,27 @@ function sumarTotalPrecios(){
 	$("#totalVenta").val(sumaTotalPrecio);
 	$("#nuevoTotalVenta").attr("total",sumaTotalPrecio);
 
+}
+/*=============================================
+FUNCIÓN AGREGAR DESCUENTO
+=============================================*/
+
+function agregarDescuento(){
+
+	var descuento = $("#nuevoDescuentoVenta").val();
+	var precioTotal = $("#nuevoTotalVenta").attr("total");
+
+	var precioDescuento = Number(precioTotal * descuento/100);
+
+	var totalConDescuento = Number(precioTotal) - Number(precioDescuento);
+	
+	$("#nuevoTotalVenta").val(totalConDescuento);
+
+	$("#totalVenta").val(totalConDescuento);
+
+	$("#nuevoPrecioDescuento").val(precioDescuento);
+
+	$("#nuevoPrecioNeto").val(precioTotal);
 
 }
 
@@ -501,7 +544,7 @@ function agregarImpuesto(){
 
 	var precioImpuesto = Number(precioTotal * impuesto/100);
 
-	var totalConImpuesto = Number(precioImpuesto) + Number(precioTotal);
+	var totalConImpuesto = Number(precioTotal) + Number(precioImpuesto);
 	
 	$("#nuevoTotalVenta").val(totalConImpuesto);
 
@@ -513,6 +556,9 @@ function agregarImpuesto(){
 
 }
 
+
+
+
 /*=============================================
 CUANDO CAMBIA EL IMPUESTO
 =============================================*/
@@ -523,6 +569,15 @@ $("#nuevoImpuestoVenta").change(function(){
 
 });
 
+/*=============================================
+CUANDO CAMBIA EL DESCUENTO
+=============================================*/
+
+$("#nuevoDescuentoVenta").change(function(){
+
+	agregarDescuento();
+
+});
 /*=============================================
 FORMATO AL PRECIO FINAL
 =============================================*/

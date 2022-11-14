@@ -1,5 +1,5 @@
 <?php
-
+ 
 require_once "../controladores/productos.controlador.php";
 require_once "../modelos/productos.modelo.php";
 
@@ -52,17 +52,17 @@ class TablaProductos{
  	 		STOCK
   			=============================================*/ 
 
-  			if($productos[$i]["stock"] <= 10){
+  			if($productos[$i]["stock"] >= $productos[$i]["stockMax"]){
+
+  				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
+
+  			}else if($productos[$i]["stock"] <=  $productos[$i]["stockMin"]){
 
   				$stock = "<button class='btn btn-danger'>".$productos[$i]["stock"]."</button>";
 
-  			}else if($productos[$i]["stock"] > 11 && $productos[$i]["stock"] <= 15){
-
-  				$stock = "<button class='btn btn-warning'>".$productos[$i]["stock"]."</button>";
-
   			}else{
 
-  				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
+  				$stock = "<button class='btn btn-warning'>".$productos[$i]["stock"]."</button>";
 
   			}
 
@@ -70,7 +70,7 @@ class TablaProductos{
  	 		TRAEMOS LAS ACCIONES
   			=============================================*/ 
 
-  			if(isset($_GET["perfilOculto"]) && $_GET["perfilOculto"] == "Especial"){
+  			if(isset($_GET["perfilOculto"]) && $_GET["perfilOculto"] == "Vendedor"){
 
   				$botones =  "<div class='btn-group'><button class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button></div>"; 
 

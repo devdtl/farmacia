@@ -94,7 +94,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                     <td>'.$value["email"].'</td>
 
-                    <td>'.$value["telefono"].'</td>
+                    <td>'.$value["telefono"].' <br> o <br>'.$value["telefono2"].'</td>
 
                     <td>'.$value["direccion"].'</td>
 
@@ -223,6 +223,18 @@ MODAL AGREGAR CLIENTE
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
+              </div>
+
+            </div>
+              
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoTelefono2" placeholder="Ingresar otro teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask >
 
               </div>
 
@@ -373,7 +385,20 @@ MODAL EDITAR CLIENTE
 
               </div>
 
+            </div>     <!-- ENTRADA PARA EL TELÉFONO2 -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarTelefono2" id="editarTelefono2" data-inputmask="'mask':'(999) 999-9999'" data-mask >
+
+              </div>
+
             </div>
+
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             
@@ -402,7 +427,7 @@ MODAL EDITAR CLIENTE
               </div>
 
             </div>
-  
+   
           </div>
 
         </div>

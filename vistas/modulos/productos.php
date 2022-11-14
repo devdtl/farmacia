@@ -1,6 +1,6 @@
 <?php
 
-if($_SESSION["perfil"] == "Vendedor"){
+if($_SESSION["perfil"] == ""){
 
   echo '<script>
 
@@ -174,21 +174,57 @@ MODAL AGREGAR PRODUCTO
               </div>
 
             </div>
-
+            <br>
              <!-- ENTRADA PARA STOCK -->
 
-             <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+          
+             <div class="form-group row">
 
-                <input type="number" class="form-control input-lg" name="nuevoStock" min="0" placeholder="Stock" required>
+                   <div class="col-xs-4">
+                   <div class="input-group">
+                
+                  <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-              </div>
+                  <input type="number" class="form-control input-lg" name="nuevoStock" min="0" placeholder="Stock" required>
 
-            </div>
+                  </div>
+                  </div>
 
+   
+
+             <!-- ENTRADA PARA StockMax -->
+
+           
+                <div class="col-xs-4">
+                
+                  <div class="input-group">
+                  
+                    <span class="input-group-addon" style="background-color: #78e08f;"><i  class="fa fa-arrow-up"></i></span> 
+
+                    <input type="number" class="form-control input-lg" id="stockMax" name="stockMax" step="any" min="0" placeholder="Stock Max" required>
+
+                  </div>
+
+                </div>   
+
+<!-- ENTRADA PARA StockMin -->
+
+
+
+   <div class="col-xs-4">
+   
+     <div class="input-group">
+     
+       <span class="input-group-addon" style="background-color: #e55039;"><i class="fa fa-arrow-down"></i></span> 
+
+       <input type="number" class="form-control input-lg" id="stockMin" name="stockMin" step="any" min="0" placeholder="Stock Min" required>
+
+     </div>
+
+   </div>
+   </div>
+
+<br>
              <!-- ENTRADA PARA PRECIO COMPRA -->
 
              <div class="form-group row">
@@ -377,19 +413,58 @@ MODAL EDITAR PRODUCTO
 
             </div>
 
+            <br>
              <!-- ENTRADA PARA STOCK -->
 
-             <div class="form-group">
-              
-              <div class="input-group">
+          
+             <div class="form-group row">
+
+                <div class="col-xs-4">
+                <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" required>
+                <input type="number" class="form-control input-lg"  id="editarStock" name="editarStock" min="0" placeholder="Stock" required>
 
               </div>
 
             </div>
+
+   
+
+             <!-- ENTRADA PARA StockMax -->
+
+           
+                <div class="col-xs-4">
+                
+                  <div class="input-group">
+                  
+                    <span class="input-group-addon" style="background-color: #78e08f;"><i  class="fa fa-arrow-up"></i></span> 
+
+                    <input type="number" class="form-control input-lg" id="editarStockMax" name="editarStockMax"  placeholder="Stock Max" required>
+
+                  </div>
+
+                </div>   
+
+<!-- ENTRADA PARA StockMin -->
+
+
+   <div class="col-xs-4">
+   
+     <div class="input-group">
+     
+       <span class="input-group-addon" style="background-color: #e55039;"><i class="fa fa-arrow-down"></i></span> 
+
+       <input type="number" class="form-control input-lg" id="editarStockMin" name="editarStockMin" step="any" min="0" placeholder="Stock Min" required>
+
+     </div>
+
+   </div>
+   </div>
+
+<br>
+
 
              <!-- ENTRADA PARA PRECIO COMPRA -->
 

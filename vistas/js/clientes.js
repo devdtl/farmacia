@@ -12,7 +12,7 @@ $(".tablas").on("click", ".btnEditarCliente", function(){
 
       url:"ajax/clientes.ajax.php",
       method: "POST",
-      data: datos,
+      data: datos, 
       cache: false,
       contentType: false,
       processData: false,
@@ -24,6 +24,7 @@ $(".tablas").on("click", ".btnEditarCliente", function(){
 	       $("#editarDocumentoId").val(respuesta["documento"]);
 	       $("#editarEmail").val(respuesta["email"]);
 	       $("#editarTelefono").val(respuesta["telefono"]);
+         $("#editarTelefono2").val(respuesta["telefono2"]);
 	       $("#editarDireccion").val(respuesta["direccion"]);
            $("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);
 	  }

@@ -16,6 +16,7 @@ CARGAR LA TABLA DINÁMICA DE PRODUCTOS
 var perfilOculto = $("#perfilOculto").val();
 
 $('.tablaProductos').DataTable( {
+	"order": [5, "asc"],
     "ajax": "ajax/datatable-productos.ajax.php?perfilOculto="+perfilOculto,
     "deferRender": true,
 	"retrieve": true,
@@ -309,6 +310,10 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
            $("#editarDescripcion").val(respuesta["descripcion"]);
 
            $("#editarStock").val(respuesta["stock"]);
+		   
+           $("#editarStockMax").val(respuesta["stockMax"]);
+
+           $("#editarStockMin").val(respuesta["stockMin"]);
 
            $("#editarPrecioCompra").val(respuesta["precio_compra"]);
 

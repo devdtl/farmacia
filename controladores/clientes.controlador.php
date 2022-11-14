@@ -4,7 +4,7 @@ class ControladorClientes{
 
 	/*=============================================
 	CREAR CLIENTES
-	=============================================*/
+	=============================================*/ 
 
 	static public function ctrCrearCliente(){
 
@@ -22,6 +22,7 @@ class ControladorClientes{
 					           "documento"=>$_POST["nuevoDocumentoId"],
 					           "email"=>$_POST["nuevoEmail"],
 					           "telefono"=>$_POST["nuevoTelefono"],
+							   "telefono2"=>$_POST["nuevoTelefono2"],
 					           "direccion"=>$_POST["nuevaDireccion"],
 					           "fecha_nacimiento"=>$_POST["nuevaFechaNacimiento"]);
 
@@ -110,6 +111,7 @@ class ControladorClientes{
 					           "documento"=>$_POST["editarDocumentoId"],
 					           "email"=>$_POST["editarEmail"],
 					           "telefono"=>$_POST["editarTelefono"],
+							   "telefono2"=>$_POST["editarTelefono2"],
 					           "direccion"=>$_POST["editarDireccion"],
 					           "fecha_nacimiento"=>$_POST["editarFechaNacimiento"]);
 

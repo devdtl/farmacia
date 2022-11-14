@@ -8,7 +8,7 @@ class AjaxClientes{
 	/*=============================================
 	EDITAR CLIENTE
 	=============================================*/	
-
+  
 	public $idCliente;
 
 	public function ajaxEditarCliente(){

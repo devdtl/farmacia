@@ -112,6 +112,7 @@ class ControladorVentas{
 						   "codigo"=>$_POST["nuevaVenta"],
 						   "productos"=>$_POST["listaProductos"],
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
+						   "descuento"=>$_POST["nuevoPrecioDescuento"],
 						   "neto"=>$_POST["nuevoPrecioNeto"],
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
@@ -286,6 +287,7 @@ class ControladorVentas{
 						   "codigo"=>$_POST["editarVenta"],
 						   "productos"=>$listaProductos,
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
+						   "descuento"=>$_POST["nuevoPrecioDescuento"],
 						   "neto"=>$_POST["nuevoPrecioNeto"],
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);

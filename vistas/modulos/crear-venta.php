@@ -181,13 +181,14 @@ if($_SESSION["perfil"] == "Especial"){
                   ENTRADA IMPUESTOS Y TOTAL
                   ======================================-->
                   
-                  <div class="col-xs-8 pull-right">
+                  <div class="col-xs-12 ">
                     
                     <table class="table">
 
                       <thead>
 
                         <tr>
+                          <th>Descuento</th>
                           <th>Impuesto</th>
                           <th>Total</th>      
                         </tr>
@@ -197,24 +198,63 @@ if($_SESSION["perfil"] == "Especial"){
                       <tbody>
                       
                         <tr>
-                          
-                          <td style="width: 50%">
+
+                        <td>
+                 <!--=====================================
+                 ENTRADA DESCUENTO  
+                  ======================================-->
+
+
+
+
+                <div class="form-group">
+                  
+                  <div class="input-group" id="descuentoForm">
+                    
+                    <span class="input-group-addon" style="color:red">-<i class="fa fa-percent"></i></span>
+                    <select class="form-control" id="nuevoDescuentoVenta" style="height: 45px; display:show" name="nuevoDescuentoVenta" required>
+                    <option  value="">Seleccionar Descuento</option>
+                    <option  value="10" style="color:#0a3d62"> Cliente Normal 10 %</option>
+                    <option  value="15" style="color:#0a3d62"> Cliente Frecuente 15 %</option>
+                    <option  value="20" style="color:#0a3d62"> Cliente Especial 20 %</option>
+                    </select>
+
+
+
+               
+
+
+
+                    <input type="hidden" name="nuevoPrecioDescuento" id="nuevoPrecioDescuento" required>
+
+                    <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" required>
+
+
+
+              
+
+
+                  </div>
+                
+                </div>                   </td>
+
+                          <td style="width:30%">
                             
                             <div class="input-group">
                            
-                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" placeholder="0" required>
+                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta"  value ="0" placeholder="0" required>
 
                                <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" required>
 
                                <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" required>
 
-                              <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                              <span class="input-group-addon" style="color:green"><i class="fa fa-percent"></i></span>
                         
                             </div>
 
                           </td>
-
-                           <td style="width: 50%">
+                     
+                           <td style="width: 30%">
                             
                             <div class="input-group">
                            
@@ -249,7 +289,7 @@ if($_SESSION["perfil"] == "Especial"){
                   
                   <div class="col-xs-6" style="padding-right:0px">
                     
-                     <div class="input-group">
+                            <div class="input-group">
                   
                       <select class="form-control" id="nuevoMetodoPago" name="nuevoMetodoPago" required>
                         <option value="">Seleccione método de pago</option>
@@ -481,3 +521,11 @@ MODAL AGREGAR CLIENTE
   </div>
 
 </div>
+<script>
+function descuentoManual() {
+
+ $("#manual").show();
+ $("#descuentoForm").hide();
+
+}
+</script>
