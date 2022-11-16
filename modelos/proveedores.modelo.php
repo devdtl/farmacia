@@ -10,10 +10,20 @@ class ModeloProveedores{
 
 	static public function mdlAgregarProveedor($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, email, telefono) VALUES (:nombre, :email, :telefono)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, email, telefono, producto1, precio1, producto2, precio2, producto3, precio3, producto4, precio4, producto5, precio5) VALUES (:nombre, :email, :telefono, :producto1, :precio1, :producto2, :precio2, :producto3, :precio3, :producto4, :precio4, :producto5, :precio5)");
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
 		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto1", $datos["producto1"], PDO::PARAM_INT);
+		$stmt->bindParam(":precio1", $datos["precio1"], PDO::PARAM_INT);
+		$stmt->bindParam(":producto2", $datos["producto2"], PDO::PARAM_INT);
+		$stmt->bindParam(":precio2", $datos["precio2"], PDO::PARAM_INT);
+		$stmt->bindParam(":producto3", $datos["producto3"], PDO::PARAM_INT);
+		$stmt->bindParam(":precio3", $datos["precio3"], PDO::PARAM_INT);
+		$stmt->bindParam(":producto4", $datos["producto4"], PDO::PARAM_INT);
+		$stmt->bindParam(":precio4", $datos["precio4"], PDO::PARAM_INT);
+		$stmt->bindParam(":producto5", $datos["producto5"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio5", $datos["precio5"], PDO::PARAM_INT);
 
 
 		if($stmt->execute()){
@@ -114,7 +124,7 @@ class ModeloProveedores{
 
 		}else{
 
-			return "error";
+			return "error"; 
 		
 		}
 

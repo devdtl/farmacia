@@ -17,6 +17,21 @@ class ControladorProductos{
 	}
 
 	/*=============================================
+	MOSTRAR PRODUCTOS
+	=============================================*/
+
+	static public function ctrMostrarProveedores($item, $valor){
+
+		$tabla = "productos";
+
+		$respuesta = ModeloProductos::mdlMostrarProvs($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
+
+	/*=============================================
 	CREAR PRODUCTO
 	=============================================*/
 
@@ -104,6 +119,16 @@ class ControladorProductos{
 							   "stockMax" => $_POST["stockMax"],
 							   "stockMin" => $_POST["stockMin"],
 							   "precio_compra" => $_POST["nuevoPrecioCompra"],
+							   "proveedor1" => $_POST["proveedor1"],
+							   "precio1" => $_POST["precio1"],
+							   "proveedor2" => $_POST["proveedor2"],
+							   "precio2" => $_POST["precio2"],
+							   "proveedor3" => $_POST["proveedor3"],
+							   "precio3" => $_POST["precio3"],
+							   "proveedor4" => $_POST["proveedor4"],
+							   "precio4" => $_POST["precio4"],
+							   "proveedor5" => $_POST["proveedor5"],
+							   "precio5" => $_POST["precio5"],
 							   "precio_venta" => $_POST["nuevoPrecioVenta"],
 							   "imagen" => $ruta);
 

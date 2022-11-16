@@ -55,13 +55,22 @@
         
         <?php
 
+      
+
         $item = null;
         $valor = null;
 
         $proveedores = ControladorProveedores::ctrMostrarProveedores($item, $valor);
 
+
+
+
+
        foreach ($proveedores as $key => $value){
-         
+
+
+          
+		  
           echo '
           <tr>
           <td>'.($key+1).'</td>
@@ -80,7 +89,7 @@
               <div class="btn-group">
 
                 <button class="btn btn-warning btnEditarProveedor"  data-toggle="modal" data-target="#modalEditarProveedor" title="editar"  idProveedor="'.$value["id"].'" ><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-primary btnMostrarProducto"  data-toggle="modal" data-target="#modalMostrarProveedor" title="ver"  idProveedor="'.$value["id"].'" ><i class="fa fa-list"></i></button>
+                <button class="btn btn-primary btnMostrarProducto"  data-toggle="modal" data-target="#modalMostrarProveedor" title="ver"  idProveedor="'.$value["id"].'" ><i class="fa fa-product-hunt"></i></button>
 
                 <button class="btn btn-danger btnEliminarProveedor" title="eliminar" idProveedor="'.$value["id"].' "><i class="fa fa-times"></i></button>
 
@@ -179,6 +188,322 @@ MODAL AGREGAR PROVEEDOR
               </div>
 
             </div>
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+            
+            <!-- ENTRADA PARA AGREGAR PROVEEDOR -->
+        
+            <div class="form-group row ">
+            <div class="col-xs-6">
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <select class="form-control input-lg" id="producto1" name="producto1" >
+                  
+                  <option value="">Selecionar Productos</option>
+
+                  <?php
+
+                  $item = null;
+                  $valor = null;
+                  $orden = "id";
+                  $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+                  foreach ($productos as $key => $value) {
+                    
+                    echo '<option value="'.$value["id"].'">'.$value["descripcion"].'</option>';
+                  }
+
+                  ?>
+  
+                </select>
+
+              </div>
+
+              </div>
+
+              <div class="col-xs-6">
+              <div class="input-group">
+                
+                <span class="input-group-addon"><i class="fa fa-money"></i></span> 
+
+                <input type="number" class="form-control input-lg" name="precio1" id="precio1" min="0" placeholder="precio" >
+                </div>
+
+              </div>
+              </div>
+
+            
+   
+            <!-- cERRAR AGREGAR PROVEEDOR -->
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+
+                       <!-- ENTRADA PARA AGREGAR PROVEEDOR -->
+        
+            <div class="form-group row " id="form1" style="display: none ;">
+            <div class="col-xs-6">
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <select class="form-control input-lg" id="producto2" name="producto2" >
+                  
+                  <option value="">Selecionar Productos</option>
+
+                  <?php
+
+                  $item = null;
+                  $valor = null;
+                  $orden = "id";
+                  $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+                  foreach ($productos as $key => $value) {
+                    
+                    echo '<option value="'.$value["id"].'">'.$value["descripcion"].' </option>';
+
+          
+                  } 
+
+                  ?>
+  
+                </select>
+              </div>
+
+              </div>
+
+
+              <div class="col-xs-6">
+              <div class="input-group">
+                
+                <span class="input-group-addon"><i class="fa fa-money"></i></span> 
+
+                <input type="number" class="form-control input-lg" name="precio2" id="precio2" min="0" placeholder="precio" >
+                </div>
+
+              </div>
+              </div>
+
+
+     <!-- cERRAR AGREGAR PROVEEDOR -->
+
+
+     <button type="button" onclick="funcform1()" id="boton1" class="btn btn-primary" >Agregar Proveedor</button> 
+
+
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+                       <!-- ENTRADA PARA AGREGAR PROVEEDOR -->
+        
+            <div class="form-group row " id="form3" style="display: none ;">
+            <div class="col-xs-6">
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <select class="form-control input-lg" id="producto3" name="producto3" >
+                  
+                  <option value="">Selecionar Productos</option>
+
+                  <?php
+
+                  $item = null;
+                  $valor = null;
+                  $orden = "id";
+                  $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+                  foreach ($productos as $key => $value) {
+                    
+                    echo '<option value="'.$value["id"].'">'.$value["descripcion"].'</option>';
+                  }
+
+                  ?>
+  
+                </select>
+
+              </div>
+
+              </div>
+
+
+              <div class="col-xs-6">
+              <div class="input-group">
+                
+                <span class="input-group-addon"><i class="fa fa-money"></i></span> 
+
+                <input type="number" class="form-control input-lg" name="precio3"  id="precio3" min="0" placeholder="precio" >
+                </div>
+
+              </div>
+              </div>
+
+
+     <!-- cERRAR AGREGAR PROVEEDOR -->
+
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+
+     <button type="button" onclick="form3()" id="boton2" style="display: none ;" class="btn btn-primary" >Agregar Proveedor</button> 
+
+                       <!-- ENTRADA PARA AGREGAR PROVEEDOR -->
+        
+                       <div class="form-group row " id="form4" style="display: none ;">
+            <div class="col-xs-6">
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <select class="form-control input-lg" id="producto4" name="producto4" >
+                  
+                  <option value="">Selecionar Productos</option>
+
+                  <?php
+
+                  $item = null;
+                  $valor = null;
+                  $orden = "id";
+                  $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+                  foreach ($productos as $key => $value) {
+                    
+                    echo '<option value="'.$value["id"].'">'.$value["descripcion"].'</option>';
+                  }
+
+                  ?>
+  
+                </select>
+              </div>
+
+              </div>
+
+
+              <div class="col-xs-6">
+              <div class="input-group">
+                
+                <span class="input-group-addon"><i class="fa fa-money"></i></span> 
+
+                <input type="number" class="form-control input-lg" name="precio4"  id="precio4" min="0" placeholder="precio" >
+                </div>
+
+              </div>
+              </div>
+
+
+     <!-- cERRAR AGREGAR PROVEEDOR -->
+
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+
+     <button type="button" onclick="form4()" id="boton3" style="display: none ;" class="btn btn-primary" style="border-radius: 83%; align-content: center;" >Agregar Proveedor</button> 
+
+             <!-- ENTRADA PARA AGREGAR PROVEEDOR -->
+        
+             <div class="form-group row " id="form5" style="display: none ;">
+            <div class="col-xs-6">
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <select class="form-control input-lg" id="producto5" name="producto5" >
+                  
+                  <option value="">Selecionar Productos</option>
+
+                  <?php
+
+                  $item = null;
+                  $valor = null;
+                  $orden = "id";
+                  $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+                  foreach ($productos as $key => $value) {
+                    
+                    echo '<option value="'.$value["id"].'">'.$value["descripcion"].'</option>';
+                  }
+
+                  ?>
+  
+                </select>
+
+              </div>
+
+              </div>
+
+
+              <div class="col-xs-6">
+              <div class="input-group">
+                
+                <span class="input-group-addon"><i class="fa fa-money"></i></span> 
+
+                <input type="number" class="form-control input-lg" name="precio5" id="precio5" min="0" placeholder="precio" >
+                </div>
+
+              </div>
+              </div>
+
+                  
+     <!-- cERRAR AGREGAR PROVEEDOR -->
+
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+   
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+     <!--........................................................................................................................................... -->
+
+   <!--........................................................................................................................................... -->
+
+
+
+
+
+
+
+       
             </div>
 
 </div>
@@ -236,73 +561,21 @@ MODAL MOSTRAR PRODUCTOS
 
         <div class="modal-body">
 
-          <div class="box-body">
-  <h1>Productos que vende el proveedor</h1>
-  <table class="table table-bordered table-striped dt-responsive tablas">
-         
-         <thead>
-          
-          <tr>
-            
-            <th style="width:10px">#</th>
-            <th>Nombre</th>
-            <th>Tipo</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-            <th>Acciones</th>
- 
-          </tr> 
- 
-         </thead>
- 
-         <tbody>
-            
-         
-         <?php
- 
-         $item = null;
-         $valor = null;
- 
-         $prodprovs = ControladorProveedores::ctrMostrarProducto($item, $valor);
- 
-        foreach ($prodprovs as $key => $value){
-          
-           echo '
-           <tr>
-           <td>'.($key+1).'</td>
- 
-           <td>'.$value["nombre"].'</td>
- 
-           <td>'.$value["tipo"].'</td>
- 
-           <td>'.$value["cantidad"].'</td>
-           
-           <td>'.$value["precio"].'</td>
- 
-       
- 
-             <td>
- 
-           
-               <div class="btn-group">
- 
-                 <button class="btn btn-warning btnEditarProveedor"  data-toggle="modal" data-target="#modalEditarProdprov" title="editar"  idProdprov="'.$value["id"].'" ><i class="fa fa-pencil"></i></button>
-                 <button class="btn btn-danger modalEliminarProdprov" title="eliminar" idProdprov="'.$value["id"].' "><i class="fa fa-times"></i></button>
- 
-               </div>  
- 
-             </td>
- 
-           </tr>
- 
-           
-         </tbody>
-         
-        ' ; }?> 
-         
-        </table>
- 
-            </div>
+        <ul class="list-group">
+  <li class="list-group-item"> <input type="text" name="nuevoProducto1" id="nuevoProducto1"></li>
+  <li class="list-group-item"> <input type="text" name="mostrarProducto2" id="nuevoProducto2"></li>
+  <li class="list-group-item"> <input type="text" name="nuevoProducto3" id="nuevoProducto3"></li>
+  <li class="list-group-item"> <input type="text" name="mostrarProducto4" id="nuevoProducto4"></li>
+  <li class="list-group-item"> <input type="text" name="mostrarProducto5" id="nuevoProducto5"></li>
+
+  <li class="list-group-item"> <input type="text" name="mostrarPrecio1" id="nuevoPrecio1"></li>
+  <li class="list-group-item"> <input type="text" name="mostrarPrecio1" id="nuevoPrecio2"></li>
+  <li class="list-group-item"> <input type="text" name="mostrarPrecio1" id="nuevoPrecio3"></li>
+  <li class="list-group-item"> <input type="text" name="mostrarPrecio1" id="nuevoPrecio4"></li>
+  <li class="list-group-item"> <input type="text" name="mostrarPrecio1" id="nuevoPrecio5"></li>
+
+</ul>
+
 
             </div>
         <!--=====================================
@@ -435,3 +708,45 @@ MODAL EDITAR PROVEEDOR
           $eliminarProveedor = new ControladorProveedores();
           $eliminarProveedor -> ctrEliminarProveedor();
           ?>
+
+
+<script>
+function funcform1() {
+
+  document.getElementById("form1").style.display = "block";
+  document.getElementById("boton1").style.display = "none";
+  document.getElementById("boton2").style.display = "block";
+
+}
+
+
+function form3() {
+
+
+  document.getElementById("form3").style.display = "block";
+  document.getElementById("boton2").style.display = "none";
+  document.getElementById("boton3").style.display = "block";
+
+}
+
+
+function form4() {
+
+
+document.getElementById("form4").style.display = "block";
+document.getElementById("boton3").style.display = "none";
+document.getElementById("boton4").style.display = "block";
+
+}
+function form5() {
+
+
+document.getElementById("form5").style.display = "block";
+document.getElementById("boton4").style.display = "none";
+document.getElementById("boton5").style.display = "block";
+
+}
+
+
+</script>
+

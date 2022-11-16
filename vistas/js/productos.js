@@ -221,7 +221,9 @@ $(".tablaProductos tbody").on("click", "button.btnMostrarImagen", function(){
       processData: false,
       dataType:"json",
       success:function(respuesta){
-          
+      
+     
+
           var datosCategoria = new FormData();
           datosCategoria.append("idCategoria",respuesta["id_categoria"]);
 
@@ -315,15 +317,19 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
 
            $("#editarStockMin").val(respuesta["stockMin"]);
 
+           
+
            $("#editarPrecioCompra").val(respuesta["precio_compra"]);
 
            $("#editarPrecioVenta").val(respuesta["precio_venta"]);
 
            if(respuesta["imagen"] != ""){
 
-           	$("#imagenActual").val(respuesta["imagen"]);
+        $("#imagenActual").val(respuesta["imagen"]);
 
-           	$(".previsualizar").attr("src",  respuesta["imagen"]);
+        $(".previsualizar").attr("src",  respuesta["imagen"]);
+
+
 
            }
 
@@ -332,6 +338,71 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
   })
 
 })
+
+
+$(".tablaProductos tbody").on("click", "button.btnMostrarImagen", function(){
+
+	var idProducto = $(this).attr("idProducto");
+	
+	var datos = new FormData();
+    datos.append("idProducto", idProducto);
+
+     $.ajax({
+
+      url:"ajax/productos.ajax.php",
+      method: "POST",
+      data: datos,
+      cache: false,
+      contentType: false,
+      processData: false,
+      dataType:"json",
+      success:function(respuesta){
+          
+          var datosCategoria = new FormData();
+          datosCategoria.append("idCategoria",respuesta["id_categoria"]);
+
+           $.ajax({
+
+              url:"ajax/categorias.ajax.php",
+              method: "POST",
+              data: datosCategoria,
+              cache: false,
+              contentType: false,
+              processData: false,
+              dataType:"json",
+              success:function(respuesta){
+                $("#proveedor1").val(respuesta["proveedor1"]);
+
+                $("#proveedor1").val(respuesta["proveedor1"]);
+        
+                $("#proveedor1").val(respuesta["proveedor1"]);
+                
+                $("#precio1").val(respuesta["precio1"]);
+        
+                $("#precio2").val(respuesta["precio2"]);
+        
+                $("#precio3").val(respuesta["precio3"]);
+        
+        
+                  $("#editarCategoria").val(respuesta["id"]);
+                  $("#editarCategoria").html(respuesta["categoria"]);
+
+              }
+
+          })
+
+        
+
+
+      }
+
+  })
+
+})
+
+
+
+
 
 /*=============================================
 ELIMINAR PRODUCTO

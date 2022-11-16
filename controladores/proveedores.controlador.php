@@ -18,8 +18,18 @@ class ControladorProveedores{
 			   	$tabla = "proveedores";
 
 			   	$datos = array("nombre"=>$_POST["nuevoProveedor"],
-					           "email"=>$_POST["nuevoEmail"],
+					           "email"=>$_POST["nuevoEmail"], 
 					           "telefono"=>$_POST["nuevoTelefono"],
+							   "producto1" => $_POST["producto1"],
+							   "precio1" => $_POST["precio1"],
+							   "producto2" => $_POST["producto2"],
+							   "precio2" => $_POST["precio2"],
+							   "producto3" => $_POST["producto3"],
+							   "precio3" => $_POST["precio3"],
+							   "producto4" => $_POST["producto4"],
+							   "precio4" => $_POST["precio4"],
+							   "producto5" => $_POST["producto5"],
+							   "precio5" => $_POST["precio5"],
 					          );
 			   	$respuesta = ModeloProveedores::mdlAgregarProveedor($tabla, $datos);
 

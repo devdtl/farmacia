@@ -3,6 +3,11 @@
 require_once "../controladores/proveedores.controlador.php";
 require_once "../modelos/proveedores.modelo.php";
 
+ 
+require_once "../controladores/productos.controlador.php";
+require_once "../modelos/productos.modelo.php";
+
+
 class AjaxProveedor{
 
 	/*=============================================
@@ -22,7 +27,7 @@ class AjaxProveedor{
 
 
 	}
-
+ 
 }
 
 /*=============================================

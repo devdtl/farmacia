@@ -1,11 +1,11 @@
 $(".btnMostrarProducto").click(function () {
   var id_producto = $(this).attr("id_producto");
   var datos = new FormData();
-  datos.append("id_producto")
+  datos.append("id_producto", id_producto)
 
-
+ 
   $.ajax({
-    url: "ajax/prodprovs.ajax.php",
+    url: "ajax/proveedores.ajax.php",
 		method: "POST",
       	data: datos,
       	cache: false,
@@ -13,9 +13,10 @@ $(".btnMostrarProducto").click(function () {
      	processData: false,
      	dataType:"json",
      	success: function(respuesta){
- console.log("respuesta", respuesta);
+
+$("#mostrarProducto1").val(respuesta["producto1"]);
  
       }
 
 })
-})
+}) 
