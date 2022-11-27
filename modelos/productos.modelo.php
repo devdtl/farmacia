@@ -3,7 +3,7 @@
 require_once "conexion.php";
 
 class ModeloProductos{
-
+ 
 	/*=============================================
 	MOSTRAR PRODUCTOS
 	=============================================*/
@@ -41,13 +41,23 @@ class ModeloProductos{
 	=============================================*/
 	static public function mdlIngresarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, codigo, descripcion, imagen, stock, precio_compra, precio_venta) VALUES (:id_categoria, :codigo, :descripcion, :imagen, :stock, :precio_compra, :precio_venta)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, codigo, descripcion, imagen, stock, proveedor1, proveedor2, proveedor3, proveedor4, proveedor5, precio1, precio2, precio3, precio4, precio5, precio_compra, precio_venta) VALUES (:id_categoria, :codigo, :descripcion, :imagen, :stock, :proveedor1, :proveedor2, :proveedor3, :proveedor4, :proveedor5, :precio1, :precio2, :precio3, :precio4, :precio5, :precio_compra, :precio_venta)");
 
 		$stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
 		$stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_STR);
 		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 		$stmt->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
 		$stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor1", $datos["proveedor1"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor2", $datos["proveedor2"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor3", $datos["proveedor3"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor4", $datos["proveedor4"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor5", $datos["proveedor5"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio1", $datos["precio1"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio2", $datos["precio2"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio3", $datos["precio3"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio4", $datos["precio4"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio5", $datos["precio5"], PDO::PARAM_STR);
 		$stmt->bindParam(":precio_compra", $datos["precio_compra"], PDO::PARAM_STR);
 		$stmt->bindParam(":precio_venta", $datos["precio_venta"], PDO::PARAM_STR);
 
@@ -71,13 +81,23 @@ class ModeloProductos{
 	=============================================*/
 	static public function mdlEditarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, descripcion = :descripcion, imagen = :imagen, stock = :stock, precio_compra = :precio_compra, precio_venta = :precio_venta WHERE codigo = :codigo");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, descripcion = :descripcion, imagen = :imagen, stock = :stock, proveedor1 = :proveedor1, proveedor2 = :proveedor2, proveedor3 = :proveedor3, proveedor4 = :proveedor4, proveedor5 = :proveedor5, precio1 = :precio1, precio2 = :precio2, precio3 = :precio3, precio4 = :precio4, precio5 = :precio5, precio_compra = :precio_compra, precio_venta = :precio_venta WHERE codigo = :codigo");
 
 		$stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
 		$stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_STR);
 		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 		$stmt->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
 		$stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor1", $datos["proveedor1"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor2", $datos["proveedor2"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor3", $datos["proveedor3"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor4", $datos["proveedor4"], PDO::PARAM_STR);
+		$stmt->bindParam(":proveedor5", $datos["proveedor5"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio1", $datos["precio1"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio2", $datos["precio2"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio3", $datos["precio3"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio4", $datos["precio4"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio5", $datos["precio5"], PDO::PARAM_STR);
 		$stmt->bindParam(":precio_compra", $datos["precio_compra"], PDO::PARAM_STR);
 		$stmt->bindParam(":precio_venta", $datos["precio_venta"], PDO::PARAM_STR);
 

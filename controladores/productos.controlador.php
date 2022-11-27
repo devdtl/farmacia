@@ -1,7 +1,7 @@
 <?php
 
 class ControladorProductos{
-
+ 
 	/*=============================================
 	MOSTRAR PRODUCTOS
 	=============================================*/
@@ -100,7 +100,17 @@ class ControladorProductos{
 				$datos = array("id_categoria" => $_POST["nuevaCategoria"],
 							   "codigo" => $_POST["nuevoCodigo"],
 							   "descripcion" => $_POST["nuevaDescripcion"],
-							   "stock" => $_POST["nuevoStock"],
+							   "stock" => $_POST["nuevoStock"],				
+							   "proveedor1" => $_POST["nuevoProveedor1"],
+							   "proveedor2" => $_POST["nuevoProveedor2"],
+							   "proveedor3" => $_POST["nuevoProveedor3"],
+							   "proveedor4" => $_POST["nuevoProveedor4"],
+							   "proveedor5" => $_POST["nuevoProveedor5"],
+							   "precio1" => $_POST["nuevoPrecio1"],
+							   "precio2" => $_POST["nuevoPrecio2"],
+							   "precio3" => $_POST["nuevoPrecio3"],
+							   "precio4" => $_POST["nuevoPrecio4"],
+							   "precio5" => $_POST["nuevoPrecio5"],
 							   "precio_compra" => $_POST["nuevoPrecioCompra"],
 							   "precio_venta" => $_POST["nuevoPrecioVenta"],
 							   "imagen" => $ruta);
@@ -159,7 +169,7 @@ class ControladorProductos{
 	static public function ctrEditarProducto(){
 
 		if(isset($_POST["editarDescripcion"])){
-
+ 
 			if(
 			   preg_match('/^[0-9]+$/', $_POST["editarStock"]) &&	
 			   preg_match('/^[0-9.]+$/', $_POST["editarPrecioCompra"]) &&
@@ -250,6 +260,16 @@ class ControladorProductos{
 							   "codigo" => $_POST["editarCodigo"],
 							   "descripcion" => $_POST["editarDescripcion"],
 							   "stock" => $_POST["editarStock"],
+							   "proveedor1" => $_POST["editarProveedor1"],
+							   "proveedor2" => $_POST["editarProveedor2"],
+							   "proveedor3" => $_POST["editarProveedor3"],
+							   "proveedor4" => $_POST["editarProveedor4"],
+							   "proveedor5" => $_POST["editarProveedor5"],
+							   "precio1" => $_POST["editarPrecio1"],
+							   "precio2" => $_POST["editarPrecio2"],
+							   "precio3" => $_POST["editarPrecio3"],
+							   "precio4" => $_POST["editarPrecio4"],
+							   "precio5" => $_POST["editarPrecio5"],
 							   "precio_compra" => $_POST["editarPrecioCompra"],
 							   "precio_venta" => $_POST["editarPrecioVenta"],
 							   "imagen" => $ruta);

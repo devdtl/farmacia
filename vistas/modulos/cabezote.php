@@ -8,7 +8,7 @@
 		<!-- logo mini -->
 		<span class="logo-mini">
 			
-			<img src="vistas/img/plantilla/farmlogo.png" class="img-responsive" style="padding:10px">
+			<img src="vistas/img/plantilla/logologin.png" class="img-responsive" style="padding:10px">
 
 		</span>
 
@@ -16,7 +16,7 @@
 
 		<span class="logo-lg">
 			
-			<img src="vistas/img/plantilla/farmlargo.png" class="img-responsive" style="padding: 0px">
+			<img src="vistas/img/plantilla/logologin.jpg" class="img-responsive" style="padding: 0px">
 
 		</span> 
 

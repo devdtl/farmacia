@@ -1,7 +1,7 @@
 /*=============================================
 CARGAR LA TABLA DINÁMICA DE PRODUCTOS
 =============================================*/
-
+ 
 // $.ajax({
 
 // 	url: "ajax/datatable-productos.ajax.php",
@@ -198,9 +198,72 @@ $(".nuevaImagen").change(function(){
   	}
 })
 
+
+/*=============================================
+abrir imagen
+=============================================*/
+
+$(".tablaProductos tbody").on("click", "button.btnMostrarImagen", function(){
+
+	var idProducto = $(this).attr("idProducto");
+	
+	var datos = new FormData();
+    datos.append("idProducto", idProducto);
+
+     $.ajax({
+
+      url:"ajax/productos.ajax.php",
+      method: "POST",
+      data: datos,
+      cache: false,
+      contentType: false,
+      processData: false,
+      dataType:"json",
+      success:function(respuesta){
+          
+          var datosCategoria = new FormData();
+          datosCategoria.append("idCategoria",respuesta["id_categoria"]);
+
+           $.ajax({
+
+              url:"ajax/categorias.ajax.php",
+              method: "POST",
+              data: datosCategoria,
+              cache: false,
+              contentType: false,
+              processData: false,
+              dataType:"json",
+              success:function(respuesta){
+                  
+                  $("#editarCategoria").val(respuesta["id"]);
+                  $("#editarCategoria").html(respuesta["categoria"]);
+
+              }
+
+          })
+
+          
+
+           if(respuesta["imagen"] != ""){
+
+           	$("#imagenActual").val(respuesta["imagen"]);
+
+           	$(".previsualizar").attr("src",  respuesta["imagen"]);
+
+           }
+
+      }
+
+  })
+
+})
+
+
 /*=============================================
 EDITAR PRODUCTO
 =============================================*/
+
+
 
 $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
 
@@ -258,6 +321,27 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
            	$(".previsualizar").attr("src",  respuesta["imagen"]);
 
            }
+
+		   
+           $("#editarProveedor1").val(respuesta["proveedor1"]);
+
+           $("#editarProveedor2").val(respuesta["proveedor2"]);
+
+           $("#editarProveedor3").val(respuesta["proveedor3"]);
+
+           $("#editarProveedor4").val(respuesta["proveedor4"]);
+
+           $("#editarProveedor5").val(respuesta["proveedor5"]);
+
+           $("#editarPrecio1").val(respuesta["precio1"]);
+
+           $("#editarPrecio2").val(respuesta["precio2"]);
+
+           $("#editarPrecio3").val(respuesta["precio3"]);
+
+           $("#editarPrecio4").val(respuesta["precio4"]);
+
+           $("#editarPrecio5").val(respuesta["precio5"]);
 
       }
 
