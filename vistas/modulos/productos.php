@@ -1,16 +1,6 @@
 <?php
 
-if($_SESSION["perfil"] == "Vendedor"){
 
-  echo '<script>
-
-    window.location = "inicio";
-
-  </script>';
-
-  return;
-
-}
 
 ?>
 <div class="content-wrapper">
@@ -64,7 +54,7 @@ if($_SESSION["perfil"] == "Vendedor"){
            <th>Precio de compra</th>
            <th>Precio de venta</th>
            <th>Agregado</th>
-           <th>Acciones</th>
+           <th style="    width: 101px;">Acciones</th>
            
          </tr> 
 
@@ -173,20 +163,55 @@ MODAL AGREGAR PRODUCTO
               </div>
 
             </div>
-
+            <br>
              <!-- ENTRADA PARA STOCK -->
 
-             <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+          
+             <div class="form-group row">
 
-                <input type="number" class="form-control input-lg" name="nuevoStock" min="0" placeholder="Stock" required>
+                   <div class="col-xs-4">
+                   <div class="input-group">
+                
+                  <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-              </div>
+                  <input type="number" class="form-control input-lg" name="nuevoStock" min="0" placeholder="Stock" required>
 
-            </div>
+                  </div>
+                  </div>
+
+   
+
+             <!-- ENTRADA PARA StockMax -->
+
+           
+                <div class="col-xs-4">
+                
+                  <div class="input-group">
+                  
+                    <span class="input-group-addon" style="background-color: #78e08f;"><i  class="fa fa-arrow-up"></i></span> 
+
+                    <input type="number" class="form-control input-lg" id="nuevoStockMax" name="nuevoStockMax" step="any" min="0" placeholder="Stock Max" required>
+
+                  </div>
+
+                </div>   
+
+<!-- ENTRADA PARA StockMin -->
+
+
+
+   <div class="col-xs-4">
+   
+     <div class="input-group">
+     
+       <span class="input-group-addon" style="background-color: #e55039;"><i class="fa fa-arrow-down"></i></span> 
+
+       <input type="number" class="form-control input-lg" id="nuevoStockMin" name="nuevoStockMin" step="any" min="0" placeholder="Stock Min" required>
+
+     </div>
+
+   </div>
+   </div>
              
 
 
@@ -707,19 +732,53 @@ MODAL EDITAR PRODUCTO
 
             </div>
 
-             <!-- ENTRADA PARA STOCK -->
+           
+          
+            <div class="form-group row">
 
-             <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+<div class="col-xs-4">
+<div class="input-group">
 
-                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" required>
+<span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-              </div>
+<input type="number" class="form-control input-lg"  id="editarStock" name="editarStock" min="0" placeholder="Stock" required>
 
-            </div>
+</div>
+
+</div>
+
+
+
+<!-- ENTRADA PARA StockMax -->
+
+
+<div class="col-xs-4">
+
+  <div class="input-group">
+  
+    <span class="input-group-addon" style="background-color: #78e08f;"><i  class="fa fa-arrow-up"></i></span> 
+
+    <input type="number" class="form-control input-lg" id="editarStockMax" name="editarStockMax"  placeholder="Stock Max" required>
+
+  </div>
+
+</div>   
+
+<!-- ENTRADA PARA StockMin -->
+
+
+<div class="col-xs-4">
+
+<div class="input-group">
+
+<span class="input-group-addon" style="background-color: #e55039;"><i class="fa fa-arrow-down"></i></span> 
+
+<input type="number" class="form-control input-lg" id="editarStockMin" name="editarStockMin" step="any" min="0" placeholder="Stock Min" required>
+
+</div>
+
+</div>
+</div>
 
              <!-- ENTRADA PARA PRECIO COMPRA -->
 
@@ -781,168 +840,232 @@ MODAL EDITAR PRODUCTO
 
                   </div>
                   </div>
+
+                  </div>
+
+                  <hr>    <h3>Proveedores</h3> <hr>   <br>
  <!-- ENTRADA PARA nuevoProveedor1 -->
+<div class="row">
+  <div class="col-md-6">
+  <div class="form-group">
+  <div class="input-group">
+              
+              <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
- <div class="form-group">
+              <input type="text" class="form-control input-lg" id="editarProveedor1" name="editarProveedor1" min="0" placeholder="Agregar Proveedor" >
+
+            </div>
+
+          </div>
+          </div>
+
+  <div class="col-md-6">
+
+
+  <div class="form-group">
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+
+                <input type="number" class="form-control input-lg" id="editarPrecio1" name="editarPrecio1" min="0" placeholder="Agregar Precio" >
+
+            
+                </div>
+                </div>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+            <div class="row">
+  <div class="col-md-6">
+
+  
+  <div class="form-group">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarProveedor1" name="editarProveedor1" min="0" placeholder="proveedor1" required>
+                <input type="text" class="form-control input-lg" id="editarProveedor2" name="editarProveedor2" min="0" placeholder="Agregar Proveedor" >
+
+              </div>
+
+            </div>
+
+  </div>
+  <div class="col-md-6">
+  <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+
+                <input type="number" class="form-control input-lg" id="editarPrecio2" name="editarPrecio2" min="0" placeholder="Agregar Precio" >
+
+              </div>
+
+            </div>
+
+  </div>
+</div>
+
+
+
+
+
+            <div class="row">
+  <div class="col-md-6">
+
+  <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+
+                <input type="text" class="form-control input-lg" id="editarProveedor3" name="editarProveedor3" min="0" placeholder="Agregar Proveedor" >
 
               </div>
 
             </div>
 
 
-
-   <!-- ENTRADA PARA nuevoProveedor2 -->
-
-   <div class="form-group">
+  </div>
+  <div class="col-md-6">
+  <div class="form-group">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarProveedor2" name="editarProveedor2" min="0" placeholder="proveedor2" required>
+                <input type="number" class="form-control input-lg" id="editarPrecio3" name="editarPrecio3" min="0" placeholder="Agregar Precio" >
 
               </div>
 
             </div>
 
-
-
-
+  </div>
+</div>
    <!-- ENTRADA PARA nuevoProveedor3 -->
 
-   <div class="form-group">
+   
+
+
+            <div class="row">
+  <div class="col-md-6">
+
+  
+  <div class="form-group">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarProveedor3" name="editarProveedor3" min="0" placeholder="nuevoProveedor3" required>
+                <input type="text" class="form-control input-lg" id="editarProveedor4" name="editarProveedor4" min="0" placeholder="Agregar Proveedor" >
 
               </div>
 
             </div>
+
+  </div>
+  <div class="col-md-6">
+
+  <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+
+                <input type="number" class="form-control input-lg" id="editarPrecio4" name="editarPrecio4" min="0" placeholder="Agregar Precio" >
+
+              </div>
+
+            </div>
+
+  </div>
+</div>
             
    <!-- ENTRADA PARA nuevoProveedor4 -->
 
-   <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
-
-                <input type="text" class="form-control input-lg" id="editarProveedor4" name="editarProveedor4" min="0" placeholder="nuevoProveedor4" required>
-
-              </div>
-
-            </div>
 
             
-   <!-- ENTRADA PARA nuevoProveedor5 -->
 
-   <div class="form-group">
+
+
+            <div class="row">
+  <div class="col-md-6">
+
+  
+  <div class="form-group">
               
               <div class="input-group">
               
                 <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarProveedor5" name="editarProveedor5" min="0" placeholder="nuevoProveedor5" required>
+                <input type="text" class="form-control input-lg" id="editarProveedor5" name="editarProveedor5" min="0" placeholder="Agregar Proveedor" >
 
               </div>
 
             </div>
+
+
+  </div>
+  <div class="col-md-6">
+
+
+  <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
+
+                <input type="number" class="form-control input-lg" id="editarPrecio5" name="editarPrecio5" min="0" placeholder="Agregar Precio" >
+
+              </div>
+
+            </div>
+
+  </div>
+</div>
+   <!-- ENTRADA PARA nuevoProveedor5 -->
 
 
 
 
 <!-- ENTRADA PARA nuevoPrecio1 -->
 
-<div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
-
-                <input type="number" class="form-control input-lg" id="editarPrecio1" name="editarPrecio1" min="0" placeholder="nuevoPrecio1" required>
-
-              </div>
-
-            </div>
 
 
 
 <!-- ENTRADA PARA nuevoPrecio2 -->
 
-<div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="number" class="form-control input-lg" id="editarPrecio2" name="editarPrecio2" min="0" placeholder="nuevoPrecio2" required>
-
-              </div>
-
-            </div>
 
             
 <!-- ENTRADA PARA nuevoPrecio3 -->
 
-<div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
 
-                <input type="number" class="form-control input-lg" id="editarPrecio3" name="editarPrecio3" min="0" placeholder="nuevoPrecio3" required>
-
-              </div>
-
-            </div>
 
         
 <!-- ENTRADA PARA nuevoPrecio4 -->
 
-<div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
-
-                <input type="number" class="form-control input-lg" id="editarPrecio4" name="editarPrecio4" min="0" placeholder="nuevoPrecio4" required>
-
-              </div>
-
-            </div>
 
 
 
         
 <!-- ENTRADA PARA nuevoPrecio5 -->
 
-<div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
-
-                <input type="number" class="form-control input-lg" id="editarPrecio5" name="editarPrecio5" min="0" placeholder="nuevoPrecio5" required>
-
-              </div>
-
-            </div>
-
 
 
 
              
 
-            </div>
+         
 
             <!-- ENTRADA PARA SUBIR FOTO -->
 
@@ -992,6 +1115,44 @@ MODAL EDITAR PRODUCTO
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--=====================================
 MODAL EDITAR PRODUCTO
 ======================================-->
@@ -1014,35 +1175,92 @@ MODAL EDITAR PRODUCTO
         CUERPO DEL MODAL
         ======================================-->
 
-        <div class="modal-body" style="background-color:whitesmoke;">
+        <div class="modal-body" >
 
           <div class="box-body">
 
-          <img src="vistas/img/productos/default/anonymous.png" style="border-radius: 79px;     padding: 31px;" class="img-thumbnail previsualizar" width="auto">
+          <center> <h2> <input style="background-color: transparent; border:transparent; text-align:center" enabled type="text" id="editarDescripcion1"></h2></center>
+                  <hr style="border: 1px solid #eee;;">
+          <img src="vistas/img/productos/default/anonymous.png"  style="    border-radius: 31px;
+    padding: 24px;" class="img-thumbnail previsualizar" width="auto">
 
         <input type="hidden" name="imagenActual" id="imagenActual">
 
-           
+        <center>
+
+ <br><hr style="    border-top: 4px solid #eee;"><h3 style="text-decoration:solid ;">Proveedores del producto</h3>  <hr  style="    border-top: 4px solid #eee;"><br>
+
+ </center>
+        
+      <center><table class="table table-bordered ">
+  <thead class="thead-dark">
+    <tr>
+   
+      <th scope="col" >Proveedor</th>
+      <th scope="col">Precio</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+   
+      <td style="width: 500%;"><input type="text" disabled style=" width:100%; background-color: transparent; border:transparent;" id="mostrarProveedor1"></td>
+      <td><input type="text"disabled style="background-color: transparent; border:transparent" id="mostrarPrecio1"></td>
+     
+    </tr>
+    <tr>
+    
+    <td><input type="text"disabled style="background-color: transparent; border:transparent"id="mostrarProveedor2"></td>
+      <td><input type="text" disabled style="background-color: transparent; border:transparent" id="mostrarPrecio2"></td>
+  
+    </tr>
+    <tr>
+    
+    <td><input type="text" disabled style="background-color: transparent; border:transparent"id="mostrarProveedor3"></td>
+      <td><input type="text" disabled style="background-color: transparent; border:transparent" id="mostrarPrecio3"></td>
+    </tr>
+    <tr>
+    
+    <td><input type="text" disabled style="background-color: transparent; border:transparent" id="mostrarProveedor4"></td>
+      <td><input type="text" disabled style="background-color: transparent; border:transparent" id="mostrarPrecio4"></td>
+
+  </tr>
+  <tr>
+    
+  <td><input type="text" disabled style="background-color: transparent; border:transparent" id="mostrarProveedor5"></td>
+      <td><input type="text"  disabled style="background-color: transparent; border:transparent" id="mostrarPrecio5"></td>
+
+  </tr>
+  </tbody>
+</table>
+
+</center> 
 
                 </div>
 
             </div>
 
-  
           
             
              
 
             
+
             
 
         
 
 
+        
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
 
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Salir</button>
+
+        </div>
       </form>
 
         <?php

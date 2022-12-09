@@ -7,14 +7,13 @@ class ControladorClientes{
 	=============================================*/
 
 	static public function ctrCrearCliente(){
-
+ 
 		if(isset($_POST["nuevoCliente"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoCliente"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["nuevoDocumentoId"]) &&
+		
 			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) && 
-			   preg_match('/^[()\-0-9 ]+$/', $_POST["nuevoTelefono"]) && 
-			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccion"])){
+			   preg_match('/^[()\-0-9 ]+$/', $_POST["nuevoTelefono"])){
 
 			   	$tabla = "clientes";
 
@@ -22,6 +21,8 @@ class ControladorClientes{
 					           "documento"=>$_POST["nuevoDocumentoId"],
 					           "email"=>$_POST["nuevoEmail"],
 					           "telefono"=>$_POST["nuevoTelefono"],
+							   "telefono2"=>$_POST["nuevoTelefono2"],
+							   "telefono3"=>$_POST["nuevoTelefono3"],
 					           "direccion"=>$_POST["nuevaDireccion"],
 					           "fecha_nacimiento"=>$_POST["nuevaFechaNacimiento"]);
 
@@ -98,7 +99,7 @@ class ControladorClientes{
 		if(isset($_POST["editarCliente"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCliente"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["editarDocumentoId"]) &&
+			
 			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["editarEmail"]) && 
 			   preg_match('/^[()\-0-9 ]+$/', $_POST["editarTelefono"]) && 
 			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["editarDireccion"])){
@@ -110,6 +111,8 @@ class ControladorClientes{
 					           "documento"=>$_POST["editarDocumentoId"],
 					           "email"=>$_POST["editarEmail"],
 					           "telefono"=>$_POST["editarTelefono"],
+							   "telefono2"=>$_POST["editarTelefono2"],
+							   "telefono3"=>$_POST["editarTelefono3"],
 					           "direccion"=>$_POST["editarDireccion"],
 					           "fecha_nacimiento"=>$_POST["editarFechaNacimiento"]);
 

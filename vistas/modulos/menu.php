@@ -44,7 +44,7 @@
 
 		}
 
-		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"){
+		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"  || $_SESSION["perfil"] == "Vendedor"){
 
 			echo '<li>
 
@@ -66,7 +66,20 @@
 
 				</a>
 
-			</li>';
+			</li>
+			
+			<li>
+
+			<a href="servicios">
+
+				<i class="fa fa-scribd"></i>
+				<span>Servicios</span>
+
+			</a>
+
+		</li>
+			';
+			
 
 		}
 
@@ -85,7 +98,7 @@
 
 		}
 
-		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
+		if($_SESSION["perfil"] == "Administrador" ){
 
 			echo '<li class="treeview">
 

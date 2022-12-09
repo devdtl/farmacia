@@ -1,7 +1,7 @@
 <?php
 
 class ControladorProveedores{
-
+ 
 	/*=============================================
 	CREAR Proveedores
 	=============================================*/
@@ -10,8 +10,7 @@ class ControladorProveedores{
 
 		if(isset($_POST["nuevoProveedor"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoProveedor"]) &&
-			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) && 
+			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) && 
 			   preg_match('/^[()\-0-9 ]+$/', $_POST["nuevoTelefono"])
 			){
 
@@ -20,6 +19,18 @@ class ControladorProveedores{
 			   	$datos = array("nombre"=>$_POST["nuevoProveedor"],
 					           "email"=>$_POST["nuevoEmail"],
 					           "telefono"=>$_POST["nuevoTelefono"],
+							   "telefono2"=>$_POST["nuevoTelefono2"],
+							   "telefono3"=>$_POST["nuevoTelefono3"],
+							   "producto1"=>$_POST["producto1"],
+							   "producto2"=>$_POST["producto2"],
+							   "producto3"=>$_POST["producto3"],
+							   "producto4"=>$_POST["producto4"],
+							   "producto5"=>$_POST["producto5"],
+							   "precio1"=>$_POST["precio1"],
+							   "precio2"=>$_POST["precio2"],
+							   "precio3"=>$_POST["precio3"],
+							   "precio4"=>$_POST["precio4"],
+							   "precio5"=>$_POST["precio5"],
 					          );
 			   	$respuesta = ModeloProveedores::mdlAgregarProveedor($tabla, $datos);
 
@@ -29,7 +40,7 @@ class ControladorProveedores{
 
 					swal({
 						  type: "success",
-						  title: "El cliente ha sido guardado correctamente",
+						  title: "El Proveedor ha sido guardado correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -50,7 +61,7 @@ class ControladorProveedores{
 
 					swal({
 						  type: "error",
-						  title: "¡El cliente no puede ir vacío o llevar caracteres especiales!",
+						  title: "¡El Proveedor no puede ir vacío o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -119,7 +130,19 @@ class ControladorProveedores{
 			   	$datos = array("id"=>$_POST["idProveedor"],
 			   				   "nombre"=>$_POST["editarProveedor"],
 					           "email"=>$_POST["editarEmail"],
-					           "telefono"=>$_POST["editarTelefono"]
+					           "telefono"=>$_POST["editarTelefono"],
+							   "telefono3"=>$_POST["editarTelefono2"],
+							   "telefono2"=>$_POST["editarTelefono3"],
+							   "producto1"=>$_POST["editarProducto1"],
+							   "producto2"=>$_POST["editarProducto2"],
+							   "producto3"=>$_POST["editarProducto3"],
+							   "producto4"=>$_POST["editarProducto4"],
+							   "producto5"=>$_POST["editarProducto5"],
+							   "precio1"=>$_POST["editarPrecio1"],
+							   "precio2"=>$_POST["editarPrecio2"],
+							   "precio3"=>$_POST["editarPrecio3"],
+							   "precio4"=>$_POST["editarPrecio4"],
+							   "precio5"=>$_POST["editarPrecio5"],
 					       );
 
 			   	$respuesta = ModeloProveedores::mdlEditarProveedor($tabla, $datos);
@@ -130,7 +153,7 @@ class ControladorProveedores{
 
 					swal({
 						  type: "success",
-						  title: "El cliente ha sido cambiado correctamente",
+						  title: "El Proveedor ha sido cambiado correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -151,7 +174,7 @@ class ControladorProveedores{
 
 					swal({
 						  type: "error",
-						  title: "¡El cliente no puede ir vacío o llevar caracteres especiales!",
+						  title: "¡El Proveedor no puede ir vacío o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -173,7 +196,7 @@ class ControladorProveedores{
 	}
 
 	/*=============================================
-	ELIMINAR CLIENTE
+	ELIMINAR Proveedor
 	=============================================*/
 
 	static public function ctrEliminarProveedor(){
@@ -191,7 +214,7 @@ class ControladorProveedores{
 
 				swal({
 					  type: "success",
-					  title: "El cliente ha sido borrado correctamente",
+					  title: "El Proveedor ha sido borrado correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar",
 					  closeOnConfirm: false

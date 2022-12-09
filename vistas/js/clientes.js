@@ -24,6 +24,8 @@ $(".tablas").on("click", ".btnEditarCliente", function(){
 	       $("#editarDocumentoId").val(respuesta["documento"]);
 	       $("#editarEmail").val(respuesta["email"]);
 	       $("#editarTelefono").val(respuesta["telefono"]);
+         $("#editarTelefono2").val(respuesta["telefono2"]);
+         $("#editarTelefono3").val(respuesta["telefono3"]);
 	       $("#editarDireccion").val(respuesta["direccion"]);
            $("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);
 	  }

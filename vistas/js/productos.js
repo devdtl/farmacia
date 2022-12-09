@@ -16,6 +16,7 @@ CARGAR LA TABLA DINÁMICA DE PRODUCTOS
 var perfilOculto = $("#perfilOculto").val();
 
 $('.tablaProductos').DataTable( {
+	"order": [5, 'asc'],
     "ajax": "ajax/datatable-productos.ajax.php?perfilOculto="+perfilOculto,
     "deferRender": true,
 	"retrieve": true,
@@ -244,6 +245,11 @@ $(".tablaProductos tbody").on("click", "button.btnMostrarImagen", function(){
 
           
 
+
+		  $("#editarDescripcion1").val(respuesta["descripcion"]);
+
+
+
            if(respuesta["imagen"] != ""){
 
            	$("#imagenActual").val(respuesta["imagen"]);
@@ -251,7 +257,26 @@ $(".tablaProductos tbody").on("click", "button.btnMostrarImagen", function(){
            	$(".previsualizar").attr("src",  respuesta["imagen"]);
 
            }
+  
+           $("#mostrarProveedor1").val(respuesta["proveedor1"]);
 
+           $("#mostrarProveedor2").val(respuesta["proveedor2"]);
+
+           $("#mostrarProveedor3").val(respuesta["proveedor3"]);
+
+           $("#mostrarProveedor4").val(respuesta["proveedor4"]);
+
+           $("#mostrarProveedor5").val(respuesta["proveedor5"]);
+
+           $("#mostrarPrecio1").val(respuesta["precio1"]);
+
+           $("#mostrarPrecio2").val(respuesta["precio2"]);
+
+           $("#mostrarPrecio3").val(respuesta["precio3"]);
+
+           $("#mostrarPrecio4").val(respuesta["precio4"]);
+
+           $("#mostrarPrecio5").val(respuesta["precio5"]);
       }
 
   })
@@ -309,6 +334,8 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
            $("#editarDescripcion").val(respuesta["descripcion"]);
 
            $("#editarStock").val(respuesta["stock"]);
+		   $("#editarStockMax").val(respuesta["stockMax"]);
+		   $("#editarStockMin").val(respuesta["stockMin"]);
 
            $("#editarPrecioCompra").val(respuesta["precio_compra"]);
 

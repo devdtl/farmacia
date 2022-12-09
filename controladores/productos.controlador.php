@@ -14,7 +14,7 @@ class ControladorProductos{
 
 		return $respuesta;
 
-	}
+	} 
 
 	/*=============================================
 	CREAR PRODUCTO
@@ -100,7 +100,9 @@ class ControladorProductos{
 				$datos = array("id_categoria" => $_POST["nuevaCategoria"],
 							   "codigo" => $_POST["nuevoCodigo"],
 							   "descripcion" => $_POST["nuevaDescripcion"],
-							   "stock" => $_POST["nuevoStock"],				
+							   "stock" => $_POST["nuevoStock"],		
+							   "stockMax" => $_POST["nuevoStockMax"],	
+							   "stockMin" => $_POST["nuevoStockMin"],			
 							   "proveedor1" => $_POST["nuevoProveedor1"],
 							   "proveedor2" => $_POST["nuevoProveedor2"],
 							   "proveedor3" => $_POST["nuevoProveedor3"],
@@ -260,6 +262,8 @@ class ControladorProductos{
 							   "codigo" => $_POST["editarCodigo"],
 							   "descripcion" => $_POST["editarDescripcion"],
 							   "stock" => $_POST["editarStock"],
+							   "stockMax" => $_POST["editarStockMax"],
+							   "stockMin" => $_POST["editarStockMin"],
 							   "proveedor1" => $_POST["editarProveedor1"],
 							   "proveedor2" => $_POST["editarProveedor2"],
 							   "proveedor3" => $_POST["editarProveedor3"],

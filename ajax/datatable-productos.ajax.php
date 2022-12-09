@@ -37,7 +37,7 @@ class TablaProductos{
  	 		TRAEMOS LA IMAGEN
   			=============================================*/ 
 
-		  	$imagen = "<img src='".$productos[$i]["imagen"]."' width='70px'>";
+		  	$imagen = "<img src='".$productos[$i]["imagen"]."' width='40px'>";
 
 		  	/*=============================================
  	 		TRAEMOS LA CATEGORÍA
@@ -52,31 +52,31 @@ class TablaProductos{
  	 		STOCK
   			=============================================*/ 
 
-  			if($productos[$i]["stock"] <= 10){
+  			if($productos[$i]["stock"] >= $productos[$i]["stockMax"]){
 
-  				$stock = "<button class='btn btn-danger'>".$productos[$i]["stock"]."</button>";
+				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
 
-  			}else if($productos[$i]["stock"] > 11 && $productos[$i]["stock"] <= 15){
+			}else if($productos[$i]["stock"] <=  $productos[$i]["stockMin"]){
 
-  				$stock = "<button class='btn btn-warning'>".$productos[$i]["stock"]."</button>";
+				$stock = "<button class='btn btn-danger'>".$productos[$i]["stock"]."</button>";
 
-  			}else{
+			}else{
 
-  				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
+				$stock = "<button class='btn btn-warning'>".$productos[$i]["stock"]."</button>";
 
-  			}
+			}
 
 		  	/*=============================================
  	 		TRAEMOS LAS ACCIONES
   			=============================================*/ 
 
-  			if(isset($_GET["perfilOculto"]) && $_GET["perfilOculto"] == "Especial"){
+  			if(isset($_GET["perfilOculto"]) && $_GET["perfilOculto"] == "Vendedor"){
 
-  				$botones =  "<div class='btn-group'><button class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button></div>"; 
+  				$botones =  "<div class='btn-group'> <button class='btn btn-primary btnMostrarImagen' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProductos'><i class='fa fa-picture-o '></i></button></div>"; 
 
   			}else{
 
-  				 $botones =  "<div class='btn-group'><button class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button> &nbsp; <button class='btn btn-primary btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProductos'><i class='fa fa-picture-o '></i></button> &nbsp; <button class='btn btn-danger btnEliminarProducto' idProducto='".$productos[$i]["id"]."' codigo='".$productos[$i]["codigo"]."' imagen='".$productos[$i]["imagen"]."'><i class='fa fa-times'></i></button></div>"; 
+  				 $botones =  "<div class='btn-group'><button style='' class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button><button class='btn btn-primary btnMostrarImagen' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProductos'><i class='fa fa-picture-o '></i></button><button class='btn btn-danger btnEliminarProducto' idProducto='".$productos[$i]["id"]."' codigo='".$productos[$i]["codigo"]."' imagen='".$productos[$i]["imagen"]."'><i class='fa fa-times'></i></button></div>"; 
 
   			}
 

@@ -141,6 +141,8 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "categorias" ||
          $_GET["ruta"] == "proveedores" ||
          $_GET["ruta"] == "productos" ||
+         $_GET["ruta"] == "servicios" ||
+         $_GET["ruta"] == "index" ||
          $_GET["ruta"] == "clientes" ||
          $_GET["ruta"] == "ventas" ||
          $_GET["ruta"] == "crear-venta" ||
@@ -183,10 +185,10 @@ CUERPO DOCUMENTO
 <script src="vistas/js/usuarios.js"></script>
 <script src="vistas/js/categorias.js"></script>
 <script src="vistas/js/productos.js"></script>
+<script src="vistas/js/servicios.js"></script>
 <script src="vistas/js/clientes.js"></script>
 <script src="vistas/js/prodprovs.js"></script>
 <script src="vistas/js/proveedores.js"></script>
-
 <script src="vistas/js/ventas.js"></script>
 <script src="vistas/js/reportes.js"></script>
 

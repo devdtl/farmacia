@@ -49,7 +49,10 @@ if($_SESSION["perfil"] == "Especial"){
       </div>
 
       <div class="box-body">
-        
+
+
+
+
        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
          
         <thead>
@@ -60,7 +63,7 @@ if($_SESSION["perfil"] == "Especial"){
            <th>Nombre</th>
            <th>Documento ID</th>
            <th>Email</th>
-           <th>Teléfono</th>
+           <th style="width: 70px;" >Teléfono</th>
            <th>Dirección</th>
            <th>Fecha nacimiento</th> 
            <th>Total compras</th>
@@ -94,7 +97,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                     <td>'.$value["email"].'</td>
 
-                    <td>'.$value["telefono"].'</td>
+                    <td>'.$value["telefono"].' <br>'.$value["telefono2"].'<br>'.$value["telefono3"].'</td>
 
                     <td>'.$value["direccion"].'</td>
 
@@ -110,11 +113,15 @@ if($_SESSION["perfil"] == "Especial"){
 
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>';
+                      <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>';
 
                       if($_SESSION["perfil"] == "Administrador"){
 
                           echo '<button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+
+                      }
+                      if($_SESSION["perfil"] == "Vendedor"){
+
 
                       }
 
@@ -223,6 +230,29 @@ MODAL AGREGAR CLIENTE
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
+              </div> 
+
+            </div>
+              
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoTelefono2" placeholder="Ingresar otro teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask >
+
+              </div>
+
+            </div>
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoTelefono3" placeholder="Ingresar otro teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask >
 
               </div>
 
@@ -373,7 +403,35 @@ MODAL EDITAR CLIENTE
 
               </div>
 
+            </div>  
+            
+            <!-- ENTRADA PARA EL TELÉFONO2 -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarTelefono2" id="editarTelefono2" data-inputmask="'mask':'(999) 999-9999'" data-mask >
+
+              </div>
+
             </div>
+  <!-- ENTRADA PARA EL TELÉFONO3 -->
+            
+  <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarTelefono3" id="editarTelefono3" data-inputmask="'mask':'(999) 999-9999'" data-mask >
+
+              </div>
+
+            </div>
+
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             
@@ -397,12 +455,12 @@ MODAL EDITAR CLIENTE
               
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="editarFechaNacimiento" id="editarFechaNacimiento"  data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
+                <input type="date" class="form-control input-lg" name="editarFechaNacimiento" id="editarFechaNacimiento"  required>
 
               </div>
 
             </div>
-  
+   
           </div>
 
         </div>

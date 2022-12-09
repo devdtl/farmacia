@@ -10,10 +10,23 @@ class ModeloProveedores{
 
 	static public function mdlAgregarProveedor($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, email, telefono) VALUES (:nombre, :email, :telefono)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, email, telefono, telefono2, telefono3, producto1, producto2, producto3, producto4, producto5, precio1, precio2, precio3, precio4, precio5) VALUES (:nombre, :email, :telefono, :telefono2, :telefono3, :producto1, :producto2, :producto3, :producto4, :producto5, :precio1, :precio2, :precio3, :precio4, :precio5)");
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
 		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+		$stmt->bindParam(":telefono2", $datos["telefono2"], PDO::PARAM_STR);
+		$stmt->bindParam(":telefono3", $datos["telefono3"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto1", $datos["producto1"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto2", $datos["producto2"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto3", $datos["producto3"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto4", $datos["producto4"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto5", $datos["producto5"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio1", $datos["precio1"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio2", $datos["precio2"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio3", $datos["precio3"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio4", $datos["precio4"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio5", $datos["precio5"], PDO::PARAM_STR);
+	
 
 
 		if($stmt->execute()){
@@ -77,7 +90,7 @@ class ModeloProveedores{
 			$stmt -> execute();
 
 			return $stmt -> fetch();
-
+ 
 		}else{
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla where id_proveedor = 1");
@@ -100,13 +113,25 @@ class ModeloProveedores{
 
 	static public function mdlEditarProveedor($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre,  email = :email, telefono = :telefono WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET 
+		nombre = :nombre,  email = :email, telefono = :telefono, telefono2 = :telefono2, telefono3 = :telefono3, producto1 = :producto1, producto2 = :producto2, producto3 = :producto3, producto4 = :producto4, producto5 = :producto5, precio1 = :precio1, precio2 = :precio2, precio3 = :precio3, precio4 = :precio4, precio5 = :precio5 WHERE id = :id");
 
 		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_INT);
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
 		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
-	
+		$stmt->bindParam(":telefono2", $datos["telefono2"], PDO::PARAM_STR);
+		$stmt->bindParam(":telefono3", $datos["telefono3"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto1", $datos["producto1"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto2", $datos["producto2"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto3", $datos["producto3"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto4", $datos["producto4"], PDO::PARAM_STR);
+		$stmt->bindParam(":producto5", $datos["producto5"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio1", $datos["precio1"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio2", $datos["precio2"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio3", $datos["precio3"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio4", $datos["precio4"], PDO::PARAM_STR);
+		$stmt->bindParam(":precio5", $datos["precio5"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
